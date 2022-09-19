@@ -1,17 +1,29 @@
 <template>
-  <h1>Hello world!</h1>
-  <FirstComponent />
+  <Header />
+  <MobileNavbar v-if="this.store.menuActive" />
+  <Home />
+  <Footer />
 </template>
 
 <script>
-import FirstComponent from "./components/FirstComponent.vue"
-import Navbar from "./components/Navbar.vue"
+import Header from "./components/Header.vue";
+import Home from "./components/Home.vue";
+import Footer from "./components/Footer.vue";
+import MobileNavbar from "./components/MobileNavbar.vue";
+import { store } from "./store/store.js";
 
-export default ({
+export default {
   name: "App",
   components: {
-    FirstComponent,
-    // Navbar
-  }
-})
+    Header,
+    Home,
+    Footer,
+    MobileNavbar,
+  },
+  data() {
+    return {
+      store,
+    };
+  },
+};
 </script>
