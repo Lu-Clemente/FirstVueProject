@@ -9,22 +9,28 @@
 
       <ul class="menu-wrapper">
         <li class="menu-item">
-          <a href="/">
+          <router-link to="/">
             <font-awesome-icon icon="fa-solid fa-door-open" />
             <span class="menu-item-text">Home</span>
-          </a>
+          </router-link>
         </li>
         <li class="menu-item">
-          <font-awesome-icon icon="fa-regular fa-address-card" />
-          <span class="menu-item-text">About</span>
+          <router-link to="/about">
+            <font-awesome-icon icon="fa-regular fa-address-card" />
+            <span class="menu-item-text">About</span>
+          </router-link>
         </li>
         <li class="menu-item">
-          <font-awesome-icon icon="fa-regular fa-folder-open" />
-          <span class="menu-item-text">Projects</span>
+          <router-link to="/projects">
+            <font-awesome-icon icon="fa-regular fa-folder-open" />
+            <span class="menu-item-text">Projects</span>
+          </router-link>
         </li>
         <li class="menu-item">
-          <font-awesome-icon icon="fa-regular fa-paper-plane" />
-          <span class="menu-item-text">Contact</span>
+          <router-link to="/contact">
+            <font-awesome-icon icon="fa-regular fa-paper-plane" />
+            <span class="menu-item-text">Contact</span>
+          </router-link>
         </li>
       </ul>
     </div>
@@ -41,6 +47,11 @@ export default {
       store,
     };
   },
+  watch: {
+    $route(to, from) {
+      this.store.closeMenu();
+    },
+  },
 };
 </script>
 
@@ -53,7 +64,7 @@ export default {
   top: 0;
   right: 0;
   margin: 0;
-  background-color: rgba(0, 0, 0, .6);
+  background-color: rgba(0, 0, 0, 0.6);
   z-index: 9;
 }
 .navigation-in-overlay {
