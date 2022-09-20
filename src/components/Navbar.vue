@@ -2,22 +2,28 @@
   <nav class="navigation">
     <ul class="menu-wrapper">
       <li class="menu-item">
-        <a href="/">
+        <router-link to="/">
           <font-awesome-icon icon="fa-solid fa-door-open" />
           <span class="menu-item-text">Home</span>
-        </a>
+        </router-link>
       </li>
       <li class="menu-item">
+        <router-link to="/about">
         <font-awesome-icon icon="fa-regular fa-address-card" />
         <span class="menu-item-text">About</span>
+        </router-link>
       </li>
       <li class="menu-item">
+        <router-link to="/projects">
         <font-awesome-icon icon="fa-regular fa-folder-open" />
         <span class="menu-item-text">Projects</span>
+        </router-link>
       </li>
       <li class="menu-item">
+        <router-link to="/contact">
         <font-awesome-icon icon="fa-regular fa-paper-plane" />
         <span class="menu-item-text">Contact</span>
+        </router-link>
       </li>
     </ul>
   </nav>
